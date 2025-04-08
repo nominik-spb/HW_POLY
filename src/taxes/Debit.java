@@ -3,6 +3,7 @@ package taxes;
 public class Debit extends TaxSystem {
     @Override
     public int calcTaxFor(int debit, int credit) {
-        return debit > 0 ? debit*6/100 : 0;
+        int tax = debit * 6 / 100;
+        return Math.max(0, tax);
     }
 }
